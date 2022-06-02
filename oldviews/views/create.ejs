@@ -1,0 +1,28 @@
+
+<html lang="en">
+<%- include('./partials/header') %>
+<body><%- include('./partials/nav')%>
+    <div class="content">
+            <h1>Welcome to my create page!</h>
+            
+                <form action="/all-blogs" method="post">
+                    <br /><br />
+                    
+                    <label for="title" class="part1">Blog title: </label>
+                    <input type="text" class="part2" id="title" name="title" required><br /><br />
+                    
+                    
+                    <label for="snipple" class="part1">Blog snipple: </label>
+                    <input type="text" class="part2" name="snippet" id="snipple" required><br /><br />
+                    <label for="body" class="part1" >Blog body: </label>
+                    <textarea type="text"class="part2" id="body" name="body" required></textarea><br /><br />
+                    
+                    <button>submit</button><br /><br />
+        </div>
+                </form>
+                <!-- <div><%- include('./partials/footer')%></p> -->
+    </div>
+    
+    
+</body>
+</html>
