@@ -14,11 +14,11 @@ mongoose.connect(dbURI,{useNewUrlParser:true,useUnifiedTopology:true})
         app.listen(3000);
     })
     .catch((err)=>{console.log(err)});
-app.set('view engine','ejs'); //important
+app.set('view engine','ejs'); //important  connect to views
 
 //middleware and static
 app.use(morgan('dev'));
-app.use(express.static('public'));
+app.use(express.static('public'));//connect with css and image
 app.use(express.urlencoded({extended:true}))
 
 app.use((req,res,next)=>{

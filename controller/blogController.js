@@ -7,11 +7,12 @@ const blog_index=(req,res)=>{
             res.render('index',{title:'All-blogs',blogs:result})
         })
 }
-const blog_details=(req,res)=>{
+const blog_create_get=(req,res)=>{
       res.render('create',{title:'create'});
 }
-const blog_create_get=(req,res)=>{
-     const blog=new Blog(req.body);   //need app.use(express.urlencoded({extended:true})) converting form-data to JSON
+
+const blog_create_post=(req,res)=>{
+    const blog=new Blog(req.body);   //need app.use(express.urlencoded({extended:true})) converting form-data to JSON
     blog.save()
         .then(()=>{
             res.redirect('/all-blogs')
@@ -20,7 +21,7 @@ const blog_create_get=(req,res)=>{
             console.log(err);
         })
 }
-const blog_create_post=(req,res)=>{
+const blog_details=(req,res)=>{
      const id=req.params.id;
     console.log(id);
     Blog.findById(id)    
